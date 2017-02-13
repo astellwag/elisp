@@ -13,7 +13,7 @@
   (let ((fullname (concat ast-elisp-dir part)))
     (if (file-exists-p fullname)
 	(load fullname)
-      (message (format "Loading %s (source)...failed" fullname)))))
+      (message (format "Error loading %s" fullname)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
