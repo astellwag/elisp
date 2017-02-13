@@ -17,64 +17,6 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; me, myself and I
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq user-mail-address (concat "alex@" 	;; dont spam me
-	"stellwag.net")
-      user-full-name "Alex Stellwag"
-      gnus-ignored-from-addresses "\\(alex\\(ander\\)?\\|openstack\\)\\(\\+.*\\)?@stellwag\\.net")
-
-      
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; where to find email
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'nnir)
-(setq gnus-select-method
-      '(nnimap ""
-	       (nnimap-address "imap.mailbox.org")
-	       (nnimap-server-port 143)
-	       (nnimap-stream starttls)
-	       (nnir-search-engine imap))
-      gnus-use-agent nil
-      message-send-mail-function 'smtpmail-send-it
-      smtpmail-smtp-server "smtp.mailbox.org"
-      smtpmail-smtp-service 587)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; GPG - done through EasyPG
-;; See: https://www.emacswiki.org/emacs/EasyPG
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'epg-config)
-(setq mml2015-use 'epg
-
-      mml2015-verbose t
-;      epg-user-id gpgpgpkeyID
-      mml2015-encrypt-to-self t
-      mml2015-always-trust nil
-      mml2015-cache-passphrase t
-      mml2015-passphrase-cache-expiry '36000
-      mml2015-sign-with-sender t
-
-      gnus-message-replyencrypt t
-      gnus-message-replysign t
-      gnus-message-replysignencrypted t
-      gnus-treat-x-pgp-sig t
-
-      ;;       mm-sign-option 'guided
-      ;;       mm-encrypt-option 'guided
-      mm-verify-option 'always
-      mm-decrypt-option 'always
-
-      gnus-buttonized-mime-types
-      '("multipart/alternative"
-	"multipart/encrypted"
-	"multipart/signed")
-
-      epg-debug t)
-;(add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; boxquotes
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'boxquote)
@@ -83,34 +25,6 @@
 (define-key message-mode-map "\C-cqu" 'boxquote-unbox-region)
 (define-key message-mode-map "\C-cqt" 'boxquote-title)
 (define-key message-mode-map "\C-cqi" 'boxquote-insert-file)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; BBDB
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(require 'bbdb-autoloads)
-(require 'bbdb)
-
-;; initialization
-(bbdb-initialize 'gnus 'message)
-(bbdb-mua-auto-update-init 'gnus 'message)
-
-;; size of the bbdb popup
-(setq bbdb-pop-up-window-size 0.15
-      bbdb-mua-pop-up-window-size 0.15
-
-      ;; What do we do when invoking bbdb interactively
-      bbdb-mua-update-interactive-p '(query . create)
-
-      ;; Make sure we look at every address in a message and not only the
-      ;; first one
-      bbdb-message-all-addresses t
-
-      ;; prevent BBDB buffer ´from being shown in simple buffer list
-      bbdb-after-read-db-hook '(lambda () (rename-buffer " bbdb"))
-
-      ;; auto-save the bbdb
-      bbdb-offer-save 1)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
