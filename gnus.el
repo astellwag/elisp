@@ -1,7 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; me, myself and I
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq user-mail-address "alex@stellwag.net"
+(setq user-mail-address (concat "alex@" 	;; dont spam me
+	"stellwag.net")
       user-full-name "Alex Stellwag"
       gnus-ignored-from-addresses "\\(alex\\(ander\\)?\\|openstack\\)\\(\\+.*\\)?@stellwag\\.net")
 
