@@ -15,5 +15,8 @@
 	(load fullname)
       (message (format "Loading %s (source)...failed" fullname)))))
 
-;; path to local packages
-(add-to-list 'load-path (expand-file-name (concat ast-elisp-dir "packages")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Internals, Benutzereinstellungen, ...
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(ast-load-part "emacs-intern.el") ; Interna
