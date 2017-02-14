@@ -5,5 +5,5 @@
 ;;
 ;; -------------------------------------------------------------------
 
-(when (load "auctex.el" nil :noerror)
-  )
+(when (require 'auctex nil :noerror)
+  (load "auctex.el"))
