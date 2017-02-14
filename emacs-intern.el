@@ -16,3 +16,6 @@
 ;; auf der Console keine Menueleiste
 (unless window-system
   (menu-bar-mode 0))
+;; und unter X keinen Toolbar
+(when window-system
+  (tool-bar-mode -1))
