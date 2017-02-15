@@ -32,6 +32,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Pakete
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(ast-load-part "gnus-epg.el")                                 ; EasyPG
 (ast-load-part "gnus-bbdb.el")    ; The Insidious Big Brother Database
 
 
