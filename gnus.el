@@ -19,15 +19,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; identities and messages sources
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ast-load-part "gnus-personal.el")  ; Identities and personal settings
-(ast-load-part "gnus-mail.el")      ; message sources
+(ast-load-part "gnus-personal.el")        ; Identität und Persönliches
+(ast-load-part "gnus-mail.el")                ; Mail- und News-Quellen
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Diverse Einstellungen
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (ast-load-part "gnus-summary.el")       ; Summary-Buffer Einstellungen
-
+(ast-load-part "gnus-message.el")       ; Message-Buffer Einstellungen
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Pakete
