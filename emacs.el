@@ -13,7 +13,7 @@
   (let ((fullname (concat ast-elisp-dir part)))
     (if (file-exists-p fullname)
 	(load fullname)
-      (message (format "Loading %s (source)...failed" fullname)))))
+      (message (format "Error loading %s" fullname)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -26,3 +26,9 @@
 ;; Pakate
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(ast-load-part "emacs-tex.el") ; LaTeX
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Einstellungen ohne eigenes Paket
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(ast-load-part "emacs-sync.gnus.el")            ; Gnus synchronisieren
